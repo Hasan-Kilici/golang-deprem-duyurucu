@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strings"
 	"time"
-  "github.com/gtuk/discordwebhook"
-  "log"
+  	"github.com/gtuk/discordwebhook"
+  	"log"
 )
 
 const (
