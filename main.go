@@ -6,8 +6,9 @@ import (
 	"net/http"
 	"strings"
 	"time"
-  	"github.com/gtuk/discordwebhook"
-  	"log"
+  "github.com/gtuk/discordwebhook"
+  "log"
+  "os"
 )
 
 const (
@@ -73,7 +74,8 @@ func getLastEarthquakes() ([]earthquake, error) {
 func sendWebhook(earthquake *earthquake) error {
 
      var username = "Deprem Duyurucu"
-   var content =  "**__Yeni deprem tespit edildi!__**\n\nTarih: **" + earthquake.Date + "**\nKordinat: **" + earthquake.Latitude + "," + earthquake.Longitude + "**\nDerinlik: **" + earthquake.Depth + "**\nKonum: **" + earthquake.Location + "**\nÇözüm Niteliği: **" + earthquake.SolutionNature + "**\n-------------------------------------------"
+   var content =  "**__Yeni deprem tespit edildi!__**\n\nTarih: **" + earthquake.Date + "**\nKordinat: **" + earthquake.Latitude + "," + earthquake.Longitude + "**\nDerinlik: **" + earthquake.Depth + "**\nKonum: **" + 
+earthquake.Location + "**\nDeprem boyutu : **"+earthquake.Violence+"**\nÇözüm Niteliği: **" + earthquake.SolutionNature + "**\n-------------------------------------------"
    var url = "DISCORD WEBHOOK URL"
 
    message := discordwebhook.Message{
